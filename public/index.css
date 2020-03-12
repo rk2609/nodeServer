@@ -1,0 +1,33 @@
+body {
+	font-family: 'open sans';
+}
+
+.user_heading {
+	color: white;
+	background-color: #3399cc;
+	width: auto;
+	border-radius: 50px;
+	border: 1px solid #3399cc;
+	text-align: center;
+	margin: -15px -15px 0px -15px;
+}
+
+.user_list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.user_item {
+	width: 30vw;
+	margin: 10px;
+	border-radius: 10px;
+	box-shadow: 0px 0px 3px #aaaaaa;
+	padding: 10px;
+	cursor: pointer;
+}
+
+.user_item:hover {
+	transform: scale(1.01);
+	transition-duration: 1s;
+}
