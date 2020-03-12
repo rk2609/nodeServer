@@ -14,7 +14,7 @@ const handleApiCall = (req,res) => {
 }
 
 
-const handleImage = (db) => (req, res) => {
+const handleImageUpdate = (db) => (req, res) => {
 	const  { id } = req.body;
 	db('users')
 	  .where('id', '=', id)
@@ -29,6 +29,6 @@ const handleImage = (db) => (req, res) => {
 }
 
 module.exports = {
-	handleImage: handleImage,
+	handleImageUpdate: handleImageUpdate,
 	handleApiCall: handleApiCall
 };
