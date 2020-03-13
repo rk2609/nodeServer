@@ -15,7 +15,8 @@ const db = knex({
     connectionString : 'dbinstance.c39rvwlqncvz.ap-south-1.rds.amazonaws.com',
     user : 'rk2609',
     password : '10p13ea0105',
-    database : 'facedetect'
+    database : 'facedetect',
+    ssl: true
   }
 });
 
