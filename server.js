@@ -31,7 +31,7 @@ app.get('/', (req, res) => {
 	.from('users')
 	.then(user => {
 		if(user.length) {
-			res.render('home', {users: user});
+			res.json(user);
 			//console.log(user);
 			//res.json(user);	
 		} else {
