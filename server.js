@@ -26,20 +26,7 @@ app.use(express.json());
 app.use(cors());
 app.set('view engine', 'ejs');
 
-app.get('/', (req, res) => {
-	db.select('*')
-	.from('users')
-	.then(user => {
-		if(user.length) {
-			res.json(user);
-			//console.log(user);
-			//res.json(user);	
-		} else {
-			res.status(400).json('User Not Found');
-		}
-	})
-	.catch(err => res.status(400).json('error getting user'))
-});
+app.get('/', home.handleHome(db));
 app.post('/signin', signin.handleSignIn(db, bcrypt));
 app.post('/register', register.handleRegister(db, bcrypt));
 app.get('/profile/:id', profile.handleProfile(db));
@@ -48,6 +35,6 @@ app.post('/imageurl', (req, res) => { image.handleApiCall(req, res) });
 
 //const PORT = process.env.PORT;
 
-app.listen(process.env.PORT || 3000, () => {
-	console.log(`Server is listening on port ${process.env.PORT}`)
+app.listen(/*process.env.PORT || */3000, () => {
+	console.log(`Server is listening on port `)
 });
