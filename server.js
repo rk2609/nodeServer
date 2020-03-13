@@ -12,7 +12,7 @@ const image = require('./controllers/image');
 const db = knex({
     client: 'pg',
     connection: {
-    host : 'dbinstance.c39rvwlqncvz.ap-south-1.rds.amazonaws.com',
+    connectionString : 'dbinstance.c39rvwlqncvz.ap-south-1.rds.amazonaws.com',
     user : 'rk2609',
     password : '10p13ea0105',
     database : 'facedetect'
@@ -35,6 +35,6 @@ app.post('/imageurl', (req, res) => { image.handleApiCall(req, res) });
 
 //const PORT = process.env.PORT;
 
-app.listen(/*process.env.PORT || */3000, () => {
+app.listen(process.env.PORT || 3000, () => {
 	console.log(`Server is listening on port ${process.env.PORT}`)
 });
