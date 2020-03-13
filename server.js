@@ -27,18 +27,7 @@ app.use(cors());
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
-	db.select('*')
-	.from('users')
-	.then(user => {
-		if(user.length) {
-			res.render('home', {users: user});
-			//console.log(user);
-			//res.json(user);	
-		} else {
-			res.status(400).json('User Not Found');
-		}
-	})
-	.catch(err => res.status(400).json('error getting user'))
+	res.json('abc')
 });
 app.post('/signin', signin.handleSignIn(db, bcrypt));
 app.post('/register', register.handleRegister(db, bcrypt));
