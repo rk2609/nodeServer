@@ -26,7 +26,9 @@ app.use(express.json());
 app.use(cors());
 app.set('view engine', 'ejs');
 
-app.get('/', home.handleHome(db));
+app.get('/', (req, res) => {
+	res.json('abc')
+});
 app.post('/signin', signin.handleSignIn(db, bcrypt));
 app.post('/register', register.handleRegister(db, bcrypt));
 app.get('/profile/:id', profile.handleProfile(db));
