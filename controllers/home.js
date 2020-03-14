@@ -1,6 +1,7 @@
 const handleHome = (db) => (req, res) => {
 	db.select('*')
 	.from('users')
+	.orderBy('id')
 	.then(user => {
 		if(user.length) {
 			res.render('home', {users: user});
