@@ -12,7 +12,7 @@ const image = require('./controllers/image');
 const db = knex({
     client: 'pg',
     connection: {
-    connectionString : 'dbinstance.c39rvwlqncvz.ap-south-1.rds.amazonaws.com',
+    host : 'dbinstance.c39rvwlqncvz.ap-south-1.rds.amazonaws.com',
     user : 'rk2609',
     password : '10p13ea0105',
     database : 'facedetect',
