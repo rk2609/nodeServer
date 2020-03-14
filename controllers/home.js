@@ -1,5 +1,5 @@
 const handleHome = (db) => (req, res) => {
-	db.select('*')
+	/*db.select('*')
 	.from('users')
 	.orderBy('id')
 	.then(user => {
@@ -10,7 +10,8 @@ const handleHome = (db) => (req, res) => {
 		} else {
 			res.status(400).json('User Not Found');
 		}
-	})
+	})*/
+	res.send(db.users)
 	.catch(err => res.status(400).json('error getting user'))
 }
 
