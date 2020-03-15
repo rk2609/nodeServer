@@ -1,7 +1,7 @@
 const handleUpdateColumns = (db) => (req, res) => {
 	const  column = 'Submission_Date';
-	db('sales_final')
-	.distinct('' + column)
+	db.select('Submission_Date')
+	.from('sales_final')
 	.then(user => {
 		if(user.length) {
 			//res.render('home', {users: user});
