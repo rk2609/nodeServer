@@ -8,6 +8,7 @@ const register = require('./controllers/register');
 const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
+const sales = require('./controllers/sales');
 
 const db = knex({
     client: 'pg',
@@ -34,6 +35,7 @@ app.post('/register', register.handleRegister(db, bcrypt));
 app.get('/profile/:id', profile.handleProfile(db));
 app.put('/image', image.handleImageUpdate(db));
 app.post('/imageurl', (req, res) => { image.handleApiCall(req, res) });
+app.get('/sales', sales.handleSales(db));
 
 //const PORT = process.env.PORT;
 
