@@ -1,6 +1,6 @@
 const handleUpdateColumns = (db) => (req, res) => {
 	const  column = 'Submission_Date';
-	db.select('Submission_Date')
+	db.select('Submission_Date', 'id')
 	.from('sales_final')
 	.then(user => {
 		if(user.length) {
