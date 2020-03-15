@@ -1,6 +1,7 @@
 const handleSalesDistinct = (db) => (req, res) => {
+	const  { id } = req.params;
 	db('sales_final')
-	.distinct('Select_Destination')
+	.distinct('' + id)
 	.then(user => {
 		if(user.length) {
 			//res.render('home', {users: user});

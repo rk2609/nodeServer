@@ -37,7 +37,7 @@ app.get('/profile/:id', profile.handleProfile(db));
 app.put('/image', image.handleImageUpdate(db));
 app.post('/imageurl', (req, res) => { image.handleApiCall(req, res) });
 app.get('/sales', sales.handleSales(db));
-app.get('/salesdistinct', salesdistinct.handleSalesDistinct(db));
+app.get('/sales/:column', salesdistinct.handleSalesDistinct(db));
 
 //const PORT = process.env.PORT;
 
