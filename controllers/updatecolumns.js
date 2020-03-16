@@ -5,7 +5,7 @@ const handleUpdateColumns = (db) => (req, res) => {
 	.then(user => {
 		if(user.length) {
 			//res.render('home', {users: user});
-			//console.log(user);
+			console.log(user);
 			res.json(user);	
 		} else {
 			res.status(400).json('User Not Found');
