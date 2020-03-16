@@ -10,7 +10,6 @@ const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 const sales = require('./controllers/sales');
 const salesdistinct = require('./controllers/salesdistinct');
-const updatecolumns = require('./controllers/updatecolumns');
 
 const db = knex({
     client: 'pg',
@@ -39,10 +38,9 @@ app.put('/image', image.handleImageUpdate(db));
 app.post('/imageurl', (req, res) => { image.handleApiCall(req, res) });
 app.get('/sales', sales.handleSales(db));
 app.get('/sales/:column', salesdistinct.handleSalesDistinct(db));
-app.get('/updatecolumns', updatecolumns.handleUpdateColumns(db));
 
 //const PORT = process.env.PORT;
 
-app.listen(process.env.PORT || 3000, () => {
-	console.log(`Server is listening on port ${process.env.PORT}`)
+app.listen(/*process.env.PORT || */3000, () => {
+	console.log(`Server is listening on port `)
 });
