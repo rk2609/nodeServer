@@ -7,7 +7,7 @@ const handleSales = (db) => (req, res) => {
 			//console.log(user);
 			res.json(user);	
 		} else {
-			res.status(400).json('User Not Found');
+			res.status(400).json('User Not Founds');
 		}
 	})
 	.catch(err => res.status(400).json('error getting user'))
