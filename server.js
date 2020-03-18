@@ -39,7 +39,7 @@ app.put('/image', image.handleImageUpdate(db));
 app.post('/imageurl', (req, res) => { image.handleApiCall(req, res) });
 app.get('/sales', sales.handleSales(db));
 app.get('/sales/:column', salesdistinct.handleSalesDistinct(db));
-app.get('/trips', trip.handleTrip(db));
+app.get('/trips', trips.handleTrip(db));
 
 //const PORT = process.env.PORT;
 
