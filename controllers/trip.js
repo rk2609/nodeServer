@@ -2,7 +2,7 @@ const handleTrip = (db) => (req, res) => {
 	const  { id } = req.params;
 	db('cost_list')
 	.min('Discount_Cost')
-	.where({Trip_Id: id})
+	.where('Trip_Id', '=', id)
 	.then(user => {
 		if(user.length) {
 			res.json(user[0]);	
