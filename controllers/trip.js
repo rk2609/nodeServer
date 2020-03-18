@@ -1,10 +1,11 @@
-const handleTrips = (db) => (req, res) => {
-	db.select('*')
-	.from('trips_list')
-	.orderBy('id')
+const handleTrip = (db) => (req, res) => {
+	const  { id } = req.params;
+	db('cost_list')
+	.min('Discount_Cost')
+	.where({Trip_Id: id})
 	.then(user => {
 		if(user.length) {
-			res.json(user);	
+			res.json(user[0]);	
 		} else {
 			res.status(400).json('User Not Found');
 		}
@@ -13,5 +14,5 @@ const handleTrips = (db) => (req, res) => {
 }
 
 module.exports = {
-	handleTrips: handleTrips
+	handleTrip: handleTrip
 };
