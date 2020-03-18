@@ -1,7 +1,6 @@
 const handleTrips = (db) => (req, res) => {
 	db.select('*')
 	.from('trips_list')
-	.orderBy('id')
 	.then(user => {
 		if(user.length) {
 			console.log(user);
