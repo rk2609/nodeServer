@@ -4,6 +4,7 @@ const handleTrips = (db) => (req, res) => {
 	.orderBy('id')
 	.then(user => {
 		if(user.length) {
+			console.log(user);
 			res.json(user);	
 		} else {
 			res.status(400).json('User Not Found');
