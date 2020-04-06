@@ -11,7 +11,9 @@ const image = require('./controllers/image');
 const sales = require('./controllers/sales');
 const salesdistinct = require('./controllers/salesdistinct');
 const trips = require('./controllers/trips');
-const trip = require('./controllers/trip');
+const trip = require('./controllers/salesperson');
+
+const salesPerson = require('./controllers/trip');
 
 const db = knex({
     client: 'pg',
@@ -42,6 +44,8 @@ app.get('/sales', sales.handleSales(db));
 app.get('/sales/:column', salesdistinct.handleSalesDistinct(db));
 app.get('/trips', trips.handleTrips(db));
 app.get('/trip/:id', trip.handleTrip(db));
+
+app.get('/salesperson', salesPerson.handleSalesPerson(db));
 
 //const PORT = process.env.PORT;
 
