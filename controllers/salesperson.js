@@ -1,6 +1,6 @@
 const handleSalesPerson = (db) => (req, res) => {
 	db.select('*')
-	.from('salesPerson')
+	.from('salesperson')
 	.orderBy('id')
 	.then(user => {
 		if(user.length) {
