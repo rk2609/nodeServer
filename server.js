@@ -15,6 +15,7 @@ const trip = require('./controllers/trip');
 
 const salesPerson = require('./controllers/salesperson');
 const customers = require('./controllers/customers');
+const leads = require('./controllers/leads');
 
 const db = knex({
     client: 'pg',
@@ -48,6 +49,7 @@ app.get('/trip/:id', trip.handleTrip(db));
 
 app.get('/salesperson', salesPerson.handleSalesPerson(db));
 app.get('/customers', customers.handleCustomers(db));
+app.get('/leads', leads.handleLeads(db));
 //const PORT = process.env.PORT;
 
 app.listen(process.env.PORT || 3000, () => {
