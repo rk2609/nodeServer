@@ -11,9 +11,9 @@ const image = require('./controllers/image');
 const sales = require('./controllers/sales');
 const salesdistinct = require('./controllers/salesdistinct');
 const trips = require('./controllers/trips');
-const trip = require('./controllers/salesperson');
+const trip = require('./controllers/trip');
 
-const salesPerson = require('./controllers/trip');
+const salesPerson = require('./controllers/salesperson');
 
 const db = knex({
     client: 'pg',
